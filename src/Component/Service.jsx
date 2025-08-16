@@ -1,0 +1,91 @@
+import React from "react";
+import { motion } from "framer-motion";
+
+const Service = () => {
+  return (
+    <div id='Service' className="bg-gray-100 overflow-x-clip mb-20">
+      <div className="pt-16 sm:pt-20 max-w-[90%] md:max-w-[80%] mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+          className="text-center md:text-left"
+        >
+          <div className="text-xs sm:text-sm inline-flex border border-[#222]/10 px-2 sm:px-3 py-1 rounded-lg tracking-tight">
+            # Our Services
+          </div>
+        </motion.div>
+
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0 mt-4 md:mt-0 text-center md:text-left">
+          <motion.h1
+            className="font-extrabold text-2xl sm:text-3xl tracking-tighter bg-black text-transparent bg-clip-text mt-2 md:mt-6 leading-snug"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Services We Provide to{" "}
+            <br className="hidden sm:block" />
+            <span className="text-blue-800">
+              Keep You Connected Without Stress
+            </span>
+          </motion.h1>
+
+          <motion.button
+            className="bg-blue-800 hover:bg-blue-500 hover:text-black text-white text-xs sm:text-sm px-4 py-2 rounded-full font-medium inline-flex items-center justify-center tracking-tight w-full sm:w-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            View Our Services
+          </motion.button>
+        </div>
+      </div>
+
+      <div className="flex flex-col lg:flex-row flex-wrap items-stretch gap-6 pt-8 sm:pt-10 pb-12 sm:pb-20 max-w-[90%] md:max-w-[80%] mx-auto">
+        {[
+          {
+            icon: "fas fa-mobile",
+            title: "Trusted Services",
+            text: "From shattered screens to sluggish performance, we fix it all."
+          },
+          {
+            icon: "fas fa-tools",
+            title: "Fast Repairs",
+            text: "We work on all major brands and models, using high-quality parts."
+          },
+          {
+            icon: "fas fa-dollar-sign",
+            title: "Affordable Prices",
+            text: "We provide fast, reliable repairs that won’t break your budget."
+          }
+        ].map((service, index) => (
+          <motion.div
+            key={index}
+            className="bg-white hover:border-b-[6px] hover:border-blue-800 p-6 rounded-lg flex-1 h-full min-w-[250px] sm:min-w-[200px]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
+          >
+            <div className="inline-flex items-center justify-center bg-blue-800 p-2 rounded">
+              <i className={`${service.icon} text-white`}></i>
+            </div>
+            <h1 className="font-bold mt-2">{service.title}</h1>
+            <p className="text-sm text-black/70 mt-2">{service.text}</p>
+            <div className="inline-flex gap-1 mt-6 items-center">
+              <button className="text-sm text-black/90 bg-transparent">
+                Learn more
+              </button>
+              <i className="fas fa-arrow-right text-sm text-black/90 h-3 w-4 inline-flex justify-center items-center"></i>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Service;
