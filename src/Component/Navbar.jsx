@@ -7,16 +7,14 @@ const Navbar = () => {
         <header className="absolute left-0 z-10 top-0 w-full">
    
 
-            <div className="flex justify-center items-center py-3 bg-black text-white text-sm gap-5 top-0">
+             {/*<div className="flex justify-center items-center py-3 bg-black text-white text-sm gap-5 top-0">
                 <p className="text-white/60 hidden md:block">
                     Because Every Second Without Your Phone Matters.
                 </p>
-                <div className="inline-flex gap-3 items-center">
+               <div className="inline-flex gap-3 items-center">
                     <p className="text-white"><a href="#Service">View Our Services</a></p>
                     <i className="fas fa-arrow-right text-white h-3 w-4 inline-flex justify-center items-center"></i>
-                </div>
-            </div>
-
+                </div>*/}
         
             <div className="py-6 max-w-[80%] mx-auto">
                 <div className="container">
@@ -46,21 +44,59 @@ const Navbar = () => {
 </button>
                     </div>
 
-                    {/* Mobile Menu */}
-                    {isOpen && (
-                        <div className="lg:hidden mt-4 flex flex-col gap-4 text-white bg-black p-4 rounded-lg">
-                            <a href="#Hero" className="cursor-pointer hover:text-gray-300" onClick={() => setIsOpen(false)}>Home</a>
-                            <a href="#About" className="cursor-pointer hover:text-gray-300" onClick={() => setIsOpen(false)}>About</a>
-                            <a href="#Service" className="cursor-pointer hover:text-gray-300" onClick={() => setIsOpen(false)}>Services</a>
-                            <a href="#Contact" className="cursor-pointer hover:text-gray-300" onClick={() => setIsOpen(false)}>Contact Us</a>
-                            <button
-                                className="bg-blue-800 text-white px-4 py-2 rounded-full font-medium 
-                                inline-flex items-center justify-center hover:bg-blue-500 hover:text-black tracking-tight"
-                                onClick={() => setIsOpen(false)}
-                            >
-                               <a href="#About">Explore More</a> 
-                            </button>
-                        </div>
+    {/* Mobile Menu */}
+    {isOpen && (
+        <div
+        className={`lg:hidden fixed top-0 right-0 w-full h-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${
+        isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+    >
+        {/* Close Button */}
+        <button
+        className="absolute top-6 right-12 text-2xl text-white bg-blue-800 p-1 rounded-full focus:outline-none"
+        onClick={() => setIsOpen(false)}
+        >
+        <i className="fas fa-times"></i>
+        </button>
+    
+        {/* Nav Links */}
+        <div className="flex flex-col py-6 max-w-[80%] mx-auto justify-center h-full gap-6">
+        <a
+            href="#Hero"
+            className="cursor-pointer text-xl font-medium hover:text-gray-500"
+            onClick={() => setIsOpen(false)}
+        >
+            Home
+        </a>
+        <a
+            href="#About"
+            className="cursor-pointer text-xl font-medium hover:text-gray-500"
+            onClick={() => setIsOpen(false)}
+        >
+            About
+        </a>
+        <a
+            href="#Service"
+            className="cursor-pointer text-xl font-medium hover:text-gray-500"
+            onClick={() => setIsOpen(false)}
+        >
+            Services
+        </a>
+        <a
+            href="#Contact"
+            className="cursor-pointer text-xl font-medium hover:text-gray-500"
+            onClick={() => setIsOpen(false)}
+        >
+            Contact Us
+        </a>
+        <button className="bg-blue-800 text-white px-4 py-2 rounded-full font-medium 
+        inline-flex items-center justify-center hover:bg-blue-500 hover:text-black tracking-tight"
+        onClick={() => setIsOpen(false)}
+        >
+       <a href='#About'>Explore More</a> 
+    </button>
+        </div>
+    </div>
 )}
                 </div>
             </div>

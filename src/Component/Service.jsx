@@ -47,19 +47,19 @@ const Service = () => {
       <div className="flex flex-col lg:flex-row flex-wrap items-stretch gap-6 pt-8 sm:pt-10 pb-12 sm:pb-20 max-w-[90%] md:max-w-[80%] mx-auto">
         {[
           {
-            icon: "fas fa-mobile",
-            title: "Trusted Services",
-            text: "From shattered screens to sluggish performance, we fix it all."
+            icon: "fas fa-mobile-alt",
+            title: "Screen Repair & Replacement",
+            text: "Cracked or unresponsive screens don’t have to slow you down. We provide fast, reliable screen repair and replacement for all phone brands, using high quality parts that bring your device back to life in no time."
+          },
+          {
+            icon: "fas fa-battery-full",
+            title: "Battery Repair & Replacement",
+            text: "If your phone struggles to hold a charge or drains too quickly, it’s time for a battery check. We’ll run a full diagnostic and replace faulty batteries with premium replacements to restore your phone’s all day power."
           },
           {
             icon: "fas fa-tools",
-            title: "Fast Repairs",
-            text: "We work on all major brands and models, using high-quality parts."
-          },
-          {
-            icon: "fas fa-dollar-sign",
-            title: "Affordable Prices",
-            text: "We provide fast, reliable repairs that won’t break your budget."
+            title: "Water Damage & Hardware Fixes",
+            text: "Dropped your phone in water or facing hardware malfunctions? Our expert technicians carefully diagnose and repair water damage, faulty speakers, cameras, and charging ports to get your phone working like new again."
           }
         ].map((service, index) => (
           <motion.div

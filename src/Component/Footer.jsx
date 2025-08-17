@@ -15,6 +15,23 @@ const Footer = () => {
         "AFFORDABLE PRICES",
       ];
 
+      const steps = [
+        {
+          icon: "fas fa-message",
+          title: "florenceterigbade@gmail.com",
+          text: "Write to us",
+        },
+        {
+          icon: "fas fa-phone",
+          title: "(+234) 704 742 1106",
+          text: "Call Us (NIG)",
+        },
+        {
+          icon: "fas fa-house",
+          title: "Lagos, Nigeria",
+          text: "Our Office",
+        },
+      ];
 
     return (
         <div>
@@ -42,11 +59,49 @@ const Footer = () => {
         </motion.div>
       </div>
     </div>
-        <div className='flex justify-center items-center py-3 bg-black text-white text-sm'>
-             <p className='text-white'>Copyright @ 2025 - All Right reserved.</p>
+  
+        <div className='py-6 bg-blue-950'>
+        <div>
+        <div className="  flex flex-col 
+md:flex-row md:justify-between md:items-center md:gap-6 
+ipad:flex-col ipad:items-center ipad:gap-8 
+px-4 mt-10 max-w-[90%] md:max-w-[80%] mx-auto gap-10">
+      {steps.map((step, index) => (
+        <React.Fragment key={index}>
+        
+            <div className="inline-flex items-center justify-center bg-white/10 p-4 rounded-full">
+              <i className={`${step.icon} text-white`}></i>
+            </div>
+            <div>
+            <p className="text-sm text-white/70 mt-0">{step.text}</p>
+              <h1 className="font-medium text-white">{step.title}</h1>
+            </div>
+         
+
+          
+          {index < steps.length - 1 && (
+            <>
+              <hr className="hidden ipad:hidden md:block w-px h-12 bg-gray-400 border-0" />
+              
+            </>
+          )}
+        </React.Fragment>
+      ))}
+    </div>
+  
+            </div>
+            <div className='flex justify-center items-center gap-10 text-white text-2xl mt-12'>
+      <i class="fa-brands fa-facebook hover:text-gray-300"></i> 
+      <i class="fa-brands fa-whatsapp hover:text-gray-300"></i>
+      <i class="fa-brands fa-instagram hover:text-gray-300"></i>
+      <i class="fa-brands fa-tiktok hover:text-gray-300"></i>
+    </div>
+            </div>
         </div>
-        </div>
+        
     )
 }
 
 export default Footer
+
+

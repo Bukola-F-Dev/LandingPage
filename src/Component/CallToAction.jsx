@@ -14,7 +14,7 @@ const CallToAction = () => {
     return /^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\.com$/i.test(email);
   };
  
-  //allow custom emails, and other form of mails
+  //allow custom emails, and other form of emails
   //const pattern = /^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
   //return pattern.test(email);
 
