@@ -62,32 +62,30 @@ const Footer = () => {
   
         <div className='py-6 bg-blue-950'>
         <div>
-        <div className="  flex flex-col 
+        <div className="flex flex-col items-center justify-center text-center 
 md:flex-row md:justify-between md:items-center md:gap-6 
 ipad:flex-col ipad:items-center ipad:gap-8 
 px-4 mt-10 max-w-[90%] md:max-w-[80%] mx-auto gap-10">
-      {steps.map((step, index) => (
-        <React.Fragment key={index}>
-        
-            <div className="inline-flex items-center justify-center bg-white/10 p-4 rounded-full">
-              <i className={`${step.icon} text-white`}></i>
-            </div>
-            <div>
-            <p className="text-sm text-white/70 mt-0">{step.text}</p>
-              <h1 className="font-medium text-white">{step.title}</h1>
-            </div>
-         
+  {steps.map((step, index) => (
+    <React.Fragment key={index}>
+     
+      <div className="flex items-center gap-4 w-full max-w-xs mx-auto text-left">
+        <div className="inline-flex items-center justify-center bg-white/10 p-4 rounded-full">
+          <i className={`${step.icon} text-white text-2xl`}></i>
+        </div>
+        <div>
+          <p className="text-sm text-white/70 mt-0">{step.text}</p>
+          <h1 className="font-medium text-white">{step.title}</h1>
+        </div>
+      </div>
 
-          
-          {index < steps.length - 1 && (
-            <>
-              <hr className="hidden ipad:hidden md:block w-px h-12 bg-gray-400 border-0" />
-              
-            </>
-          )}
-        </React.Fragment>
-      ))}
-    </div>
+    
+      {index < steps.length - 1 && (
+        <hr className="hidden ipad:hidden md:block w-px h-12 bg-gray-400 border-0" />
+      )}
+    </React.Fragment>
+  ))}
+</div>
   
             </div>
             <div className='flex justify-center items-center gap-10 text-white text-2xl mt-12'>
