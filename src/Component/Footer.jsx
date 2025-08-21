@@ -63,13 +63,13 @@ const Footer = () => {
         <div className='py-6 bg-blue-950'>
         <div>
         <div className="flex flex-col items-center justify-center text-center 
-md:flex-row md:justify-between md:items-center md:gap-6 
+md:flex-row md:gap-6 
 ipad:flex-col ipad:items-center ipad:gap-8 
-px-4 mt-10 max-w-[90%] md:max-w-[80%] mx-auto gap-10">
+px-4 mt-10 md:max-w-[80%] mx-auto gap-10">
   {steps.map((step, index) => (
     <React.Fragment key={index}>
      
-      <div className="flex items-center gap-4 w-full max-w-xs mx-auto text-left">
+      <div className="flex items-center gap-4 w-full ipad:w-full max-w-xs mx-auto text-left md:w-auto">
         <div className="inline-flex items-center justify-center bg-white/10 p-2 rounded-full">
           <i className={`${step.icon} text-white text-sm`}></i>
         </div>
