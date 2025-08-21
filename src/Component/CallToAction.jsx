@@ -85,7 +85,7 @@ const CallToAction = () => {
                   placeholder="Your Name"
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full border p-2 rounded"
+                  className="w-full border p-2 rounded outline-none"
                   required
                 />
               </div>
@@ -100,7 +100,7 @@ const CallToAction = () => {
                   placeholder="Your Email"
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full p-2 border rounded"
+                  className="w-full p-2 border rounded outline-none"
                   required
                 />
               </div>
@@ -116,14 +116,14 @@ const CallToAction = () => {
                 value={form.message}
                 onChange={handleChange}
                 rows="5"
-                className="w-full p-3 border rounded resize-none"
+                className="w-full p-3 border rounded resize-none outline-none"
                 required
               />
             </div>
 
             <button
               type="submit"
-              className="bg-blue-800 hover:bg-blue-500 hover:text-black text-white text-xs sm:text-sm px-4 py-2 rounded-full font-medium inline-flex items-center justify-center tracking-tight w-full sm:w-auto"
+              className="outline-none bg-blue-800 hover:bg-blue-500 hover:text-black text-white text-xs sm:text-sm px-4 py-2 rounded-full font-medium inline-flex items-center justify-center tracking-tight w-full sm:w-auto"
              >
               Send Message
             </button>

@@ -52,14 +52,14 @@ const Navbar = () => {
     >
         {/* Close Button */}
         <button
-        className="absolute top-6 right-12 text-2xl text-white bg-blue-800 p-1 rounded-full focus:outline-none"
+        className="absolute top-6 right-12 text-xl text-white bg-blue-800 p-1 rounded-full focus:outline-none"
         onClick={() => setIsOpen(false)}
         >
         <i className="fas fa-times"></i>
         </button>
     
         {/* Nav Links */}
-        <div className="flex flex-col py-6 max-w-[80%] mx-auto justify-center h-full gap-6">
+        <div className="flex flex-col py-6 max-w-[80%] mx-auto mt-20 h-full gap-6">
         <a
             href="#Hero"
             className="cursor-pointer text-xl font-medium hover:text-gray-500"

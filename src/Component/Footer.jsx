@@ -65,7 +65,7 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-center text-center 
 md:flex-row md:gap-6 
 ipad:flex-col ipad:items-center ipad:gap-8 
-px-4 mt-10 md:max-w-[80%] mx-auto gap-10">
+px-4 mt-4 ipad:mt-6 md:mt-8 md:max-w-[80%] mx-auto gap-10">
   {steps.map((step, index) => (
     <React.Fragment key={index}>
      
@@ -85,7 +85,7 @@ px-4 mt-10 md:max-w-[80%] mx-auto gap-10">
   ))}
 </div>
             </div>
-            <div className='flex justify-center items-center gap-10 text-white text-2xl mt-12 mb-10'>
+            <div className='flex justify-center items-center gap-4 ipad:4 md:gap-6 text-white text-2xl mt-12 mb-10'>
       <i class="fa-brands fa-facebook hover:text-gray-300"></i> 
       <i class="fa-brands fa-whatsapp hover:text-gray-300"></i>
       <i class="fa-brands fa-instagram hover:text-gray-300"></i>
