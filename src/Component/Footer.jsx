@@ -92,9 +92,7 @@ px-4 mt-10 md:max-w-[80%] mx-auto gap-10">
       <i class="fa-brands fa-tiktok hover:text-gray-300"></i>
     </div>
     <p className=" flex justify-center items-center text-white cursor-pointer text-sm m-0">Copyright @ 2025 - All Right reserved.</p>
-   
             </div>
-            
         </div>
         
     )
