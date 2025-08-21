@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 
 const Hero = () => {
   return (
+ 
     <section id='Hero'
       className="relative pt-32 md:pt-40 pb-0 overflow-x-clip bg-no-repeat bg-right bg-contain"
       style={{
@@ -74,6 +75,7 @@ const Hero = () => {
 
       <Navbar />
     </section>
+ 
   )
 }
 
