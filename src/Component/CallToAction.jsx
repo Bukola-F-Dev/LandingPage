@@ -28,7 +28,7 @@ const CallToAction = () => {
       return;
     }
 
-    setStatus("Sending...");
+    setStatus({ type: "sending", message: "Sending..." });
 
     try {
       const res = await fetch("https://landingpagebackend-7q1r.onrender.com/contact", {
@@ -38,13 +38,14 @@ const CallToAction = () => {
       });
 
       if (res.ok) {
-        setStatus("Message sent successfully!");
+        setStatus({ type: "success", message: "Message sent successfully!" });
         setForm({ name: "", email: "", message: "" });
       } else {
-        setStatus("Failed to send message.");
+        const data = await res.json(); 
+        setStatus({ type: "error", message: data.error || "Failed to send message" });
       }
     } catch (error) {
-      setStatus("An error occurred.");
+      setStatus({ type: "error", message: "Network error, please try again." });
     }
 
     // Clear message after 5 seconds
@@ -126,7 +127,15 @@ const CallToAction = () => {
              >
               Send Message
             </button>
-            {status && <p className="mt-2 text-sm">{status}</p>}
+            {status && (
+  <p className={`mt-2 text-xl ${
+    status.type === "success" ? "text-green-600" :
+    status.type === "error" ? "text-red-600" :
+    "text-blue-600"
+  }`}>
+    {status.message}
+  </p>
+)}
           </form>
         </div>
       </div>

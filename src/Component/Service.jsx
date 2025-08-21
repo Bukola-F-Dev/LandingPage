@@ -64,7 +64,7 @@ const Service = () => {
         ].map((service, index) => (
           <motion.div
             key={index}
-            className="bg-white hover:border-b-[6px] hover:border-blue-800 p-6 rounded-lg flex-1 h-full min-w-[250px] sm:min-w-[200px]"
+            className="bg-white md:hover:border-b-[6px] hover:border-blue-800 p-6 rounded-lg flex-1 h-full min-w-[250px] sm:min-w-[200px]"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
