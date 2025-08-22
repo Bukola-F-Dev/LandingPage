@@ -24,8 +24,8 @@ const CallToAction = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!captchaToken) {
-      setStatus("Please complete the reCAPTCHA");
-      return;
+      setStatus({ type: "error", message: "Please complete the reCAPTCHA" });
+  return;
     }
 
     if (!validateEmail(form.email)) {
@@ -138,6 +138,7 @@ const CallToAction = () => {
       <ReCAPTCHA
         sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
         onChange={(token) => setCaptchaToken(token)}
+  onExpired={() => setCaptchaToken("")}  
       />
 
             <button
