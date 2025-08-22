@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const CallToAction = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
+  const [captchaToken, setCaptchaToken] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -20,6 +22,10 @@ const CallToAction = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!captchaToken) {
+      alert("Please complete the reCAPTCHA");
+      return;
+    }
 
     if (!validateEmail(form.email)) {
       setStatus("Please use a valid Gmail or Yahoo email.");
@@ -34,7 +40,7 @@ const CallToAction = () => {
       const res = await fetch("https://landingpagebackend-7q1r.onrender.com/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, captcha: captchaToken }),
       });
 
       if (res.ok) {
@@ -120,6 +126,12 @@ const CallToAction = () => {
                 required
               />
             </div>
+
+            {/* Google reCAPTCHA */}
+      <ReCAPTCHA
+        sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+        onChange={(token) => setCaptchaToken(token)}
+      />
 
             <button
               type="submit"
