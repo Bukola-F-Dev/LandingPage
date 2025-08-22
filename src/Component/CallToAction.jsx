@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from 'framer-motion';
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -6,6 +6,7 @@ const CallToAction = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
   const [captchaToken, setCaptchaToken] = useState("");
+  const recaptchaRef = useRef(null);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -23,7 +24,7 @@ const CallToAction = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!captchaToken) {
-      alert("Please complete the reCAPTCHA");
+      setStatus("Please complete the reCAPTCHA");
       return;
     }
 
@@ -41,6 +42,7 @@ const CallToAction = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, captcha: captchaToken }),
+        
       });
 
       if (res.ok) {
@@ -52,6 +54,11 @@ const CallToAction = () => {
       }
     } catch (error) {
       setStatus({ type: "error", message: "Network error, please try again." });
+    }
+
+    if (recaptchaRef.current) {
+      recaptchaRef.current.reset();
+      setCaptchaToken("");
     }
 
     // Clear message after 5 seconds
@@ -127,7 +134,7 @@ const CallToAction = () => {
               />
             </div>
 
-            {/* Google reCAPTCHA */}
+            {/* Google recaptcha */}
       <ReCAPTCHA
         sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
         onChange={(token) => setCaptchaToken(token)}
